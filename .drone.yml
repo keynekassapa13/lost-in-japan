@@ -1,0 +1,12 @@
+pipeline:
+  build:
+    image: cguds/cgray-tests
+    pull: true
+    commands:
+      - mkdir build && cd build
+      - cmake -D CMAKE_BUILD_TYPE=Debug ..
+      - cmake --build . --target cgray
+
+  test:
+    image: cguds/cgray-tests
+    pull: true
